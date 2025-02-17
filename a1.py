@@ -115,7 +115,114 @@ def test_averages():
         average=total/len(tokens)
         print(f"Average: {average}")
 
+def check_points():
+    my_string="Deep learning is important for AI."
+    if "d" in my_string.lower():
+        print("The string 'd' was found.")
+    else:
+        print("The string 'd' was not found.")
+    big="strings"
+    little=big.upper()
+    print(little)
+    my_string="apbr316269"
+    if my_string.isalnum():
+        print("Digit")
+    else:
+        print("No digit.")
+    ch = 'a'
+    ch2 = ch.upper()
+    print(ch, ch2)
+    again="r"
+    while again.lower() in ["r","q"]:
+        again=input("Do you want to repeat the program or quit? (R/Q) ")
+    var = '$'
+    print(var.upper())
+    my_string="AbnbdCdjkeDefGHJ"
+    uppercase_count=0
+    for ch in my_string:
+        if ch.isupper():
+            uppercase_count+=1
+    print(uppercase_count)    
+    days="Monday Tuesday Wednesday"
+    print(days.split(" "))
+    values="one$two$three$four"
+    print(values.split("$"))
+    choice="y"
+    if choice.lower()=="y":
+        print("That worked.")
+    string_1="Abcde fgh ivy z"
+    string_count_1=0
+    string_count_2=0
+    string_count_3=0
+    for ch in string_1:
+        if ch==" ":
+            string_count_1+=1
+        if ch.isalnum():
+            string_count_2+=1
+        if ch.islower():
+            string_count_3+=1
+    print(string_count_1)
+    print(string_count_2)
+    print(string_count_3)
+    string_2="https://youtube.com"
+    def begin_https(string_2):
+        if string_2.startswith("https"):
+            print("This string start with 'https'.")
+    begin_https(string_2)
+    string_3="Tradational text textures changes after times."
+    t_index_list=[]
+    total_ch_count_list=[]
+    index_count=0
+    for ch in string_3:
+        if ch.lower()=="t":
+            t_index_list.append(index_count)
+        index_count+=1
+    for index in t_index_list:
+        total_ch_count=0
+        count=0
+        max_value=len(string_3)
+        min_value=0
+        while not max_value-count==index:
+            print(string_3[index:max_value-count])    
+            total_ch_count+=1
+            count+=1
+        count=0
+        while not min_value+count==index:
+            print(string_3[min_value+count:index+1])
+            total_ch_count+=1
+            count+=1
+        total_ch_count_list.append(total_ch_count)
+        print()
+    print(t_index_list,total_ch_count_list,sep=" ")
+    def backwards(my_string):
+        print(my_string)
+        print(my_string[::-1])
+        print(my_string[:3])
+        print(my_string[-3:])
+    backwards(my_string)
+    levels="Beginner, Average, Advanced, Expert"
+    print(levels.split(", "))
+    
+  
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+check_points()
 
 
 
