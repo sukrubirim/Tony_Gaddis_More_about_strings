@@ -78,8 +78,42 @@ def repetition_operator():
         elif count>=10:
             print("Z"*(19-count))
 
-
-
+def x_x():
+    csv_file=open("test_scores.csv","r")
+    lines=csv_file.readlines()
+    csv_file.close()    
+    return_list=[]
+    for index in range(len(lines)):
+        lines[index]=lines[index].rstrip("\n")
+    i=lines[0]
+    if "," in i:
+        j=","
+    else:
+        j=";"
+    for line in lines:
+        line=line.split(j)
+        return_list+=line
+    csv_file=open("test_scores.csv","w")
+    count=0
+    for item in return_list:
+        count+=1
+        if count not in list(range(5,30,5)):
+            csv_file.write(str(item)+";")
+        else:
+            csv_file.write(str(item)+"\n")
+    csv_file.close()
+        
+def test_averages():
+    cvs_file=open("test_scores.csv","r")
+    lines=cvs_file.readlines()
+    cvs_file.close()
+    for line in lines:
+        tokens=line.split(";")
+        total=0.0
+        for token in tokens:
+            total+=float(token)
+        average=total/len(tokens)
+        print(f"Average: {average}")
 
 
 
