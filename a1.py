@@ -30,9 +30,11 @@ def main():
     first=input("Enter your first name: ") 
     second=input("Enter your last name: ") 
     id_number=input("Enter your id number: ") 
+    pasword=a1.login(first,second,id_number)
     print("Your system login name is: ",end="") 
-    print(a1.login(first,second,id_number)) 
-    
+    print(pasword)
+    return pasword
+
 def testing_string(): 
     user_string=input("Enter a string: ") 
     print("This is what I found about string: ") 
@@ -46,4 +48,65 @@ def testing_string():
                 print(f'The string contains only {test_results[test_list.index(case)]}.') 
             elif test_list.index(case) in [4,5]: 
                 print(f'The letters in the string are all {test_results[test_list.index(case)]}.')
-testing_string()
+
+def valid_password():
+    import a1
+    password=a1.main()
+    correct_length=False
+    has_uppercase=False
+    has_lowercase=False
+    has_digit=False
+    if len(password)>=7:
+        correct_length=True
+        for ch in password:
+            if ch.isupper():
+                has_uppercase=True
+            if ch.islower():
+                has_lowercase=True
+            if ch.isdigit():
+                has_digit=True
+    if correct_length and has_uppercase and has_lowercase and has_digit:
+        print("That password is valid.")
+    else:
+        print("That password is not valid.")
+        valid_password()
+        
+def repetition_operator():
+    for count in range(1,19):
+        if count<=9:
+            print("Z"*count)
+        elif count>=10:
+            print("Z"*(19-count))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
